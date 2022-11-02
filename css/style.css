@@ -1,0 +1,12 @@
+.box {
+  width: 400px;
+  height: 400px;
+  background-color: seagreen;
+  border-radius: 50%;
+}
+
+.rectangular-box {
+  width: 400px;
+  height: 200px;
+  background-color: blue;
+}
