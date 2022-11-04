@@ -1,4 +1,10 @@
-.box {
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/* .box {
   width: 400px;
   height: 400px;
   background-color: seagreen;
@@ -9,4 +15,22 @@
   width: 400px;
   height: 200px;
   background-color: blue;
-}
+} */
+
+/* #rounded-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+} */
+
+/* img {
+  width: 400px;
+  height: 400px;
+  border-radius: 400px;
+} */
+
+/* .rounded-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+} */
