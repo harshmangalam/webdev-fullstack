@@ -1,0 +1,45 @@
+body {
+  background-color: #fafafa;
+}
+
+.post-card {
+  background-color: #ffffff;
+  max-width: 600px;
+  margin: auto;
+  border-color: #dcdcdc;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+}
+
+.post-author-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 32px;
+}
+
+.post-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 56px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.post-card-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.post-card-header-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
