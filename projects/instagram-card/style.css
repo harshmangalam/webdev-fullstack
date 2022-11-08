@@ -1,5 +1,18 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
 body {
   background-color: #fafafa;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0px;
+  margin: 0px;
 }
 
 .post-card {
@@ -42,4 +55,61 @@ body {
   border: none;
   background-color: transparent;
   cursor: pointer;
+}
+
+.media-img {
+  height: 500px;
+  width: 100%;
+}
+
+.action-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+}
+
+.action-container-left {
+  display: flex;
+  gap: 12px;
+}
+
+.content-container {
+  padding: 8px;
+}
+
+.text-sm {
+  font-size: 14px;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.comment-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px;
+}
+
+.comment-body {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.comment-input {
+  flex: 1;
+  border: none;
+}
+
+
+.comment-input:focus {
+  outline: none;
+}
+
+.post-btn {
+  color: #0095f6;
+  font-weight: 600;
 }
