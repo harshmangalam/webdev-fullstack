@@ -1,0 +1,40 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-link {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  color: #263442;
+  padding: 8px 16px;
+  border-radius: 32px;
+  
+}
+
+.nav-link:hover {
+  background-color: #efefef;
+}
+
+.nav-link:hover .svg-icon {
+    transform: scale(1.1);
+}
+
+.sidebar-container {
+    max-width: 200px;
+    width: 100%;
+    padding: 32px 8px;
+}
+
+
+.nav-link-text {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
