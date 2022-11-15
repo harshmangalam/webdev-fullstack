@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      input[type="text"] {
+        color: blue;
+      }
+
+      input[type="password"] {
+        color: transparent;
+      }
+
+      input[value^="text"] {
+        border: 1px solid blue !important;
+      }
+
+      input {
+        border: 2px solid green;
+      }
+
+      .input {
+        border: 3px solid pink ;
+      }
+
+      #input {
+        border: 4px solid purple;
+      }
+    </style>
+  </head>
+  <body>
+    <input id="input" class="input" type="text" value="text1" />
+    <input id="input" class="input" type="email" value="text1@gmail.com" />
+    <input id="input" class="input" type="password" value="text12345" />
+    <input id="input" class="input" type="password" value="12345" />
+  </body>
+</html>
