@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      @keyframes animate-box1 {
+        from {
+          transform: translate(0px);
+        }
+        to {
+          transform: translateX(200px);
+        }
+      }
+
+      @keyframes animate-para {
+        0% {
+          font-weight: 400;
+        }
+        25% {
+          font-weight: 500;
+        }
+        50% {
+          font-weight: 600;
+        }
+        75% {
+          font-weight: 600;
+        }
+        100% {
+          font-weight: 700;
+        }
+      }
+
+      .paragraph {
+        animation-name: animate-para;
+        animation-duration: 5s;
+      }
+
+      .box1 {
+        width: 120px;
+        height: 80px;
+        background-color: pink;
+        animation-name: animate-box1;
+        animation-duration: 4s;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        animation-direction: alternate-reverse;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="paragraph">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi natus,
+      amet quo porro nostrum unde exercitationem distinctio numquam repellat,
+      eius tempora sapiente. Assumenda ratione, perspiciatis molestias nemo, ex
+      accusamus ut nam nostrum id ducimus eaque quam laudantium adipisci libero
+      quo rerum quisquam nobis consequatur officia cupiditate obcaecati vero.
+      Voluptatibus laboriosam exercitationem magnam officiis perspiciatis
+      tenetur voluptatem iusto quisquam ipsum, quod quia voluptas eligendi
+      reiciendis ipsam ab fugiat? Fuga quibusdam officia ipsam voluptatem
+      deleniti non dolores quam eaque quia dolorem consectetur, esse, asperiores
+      dicta. Beatae debitis optio pariatur, maxime illum corrupti nisi quia
+      ullam. Commodi perferendis, aliquid odit eaque magni nulla?
+    </p>
+
+    <div class="box1"></div>
+  </body>
+</html>
