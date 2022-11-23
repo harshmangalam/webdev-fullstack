@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./cart.css" />
     <title>Cart</title>
   </head>
   <body>
@@ -89,12 +90,258 @@
     <!-- end header navigation  -->
 
     <main>
+      <!-- toast message  -->
+      <div class="toast">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="toast-icon"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"
+          />
+        </svg>
+
+        <p class="toast-text">Item removed from cart</p>
+      </div>
       <!-- cart sub total and heading heading section  -->
       <section style="display: flex; justify-content: space-between">
         <h3 style="font-size: 24px; color: #374151">Your Card</h3>
         <div style="display: flex; flex-direction: column; gap: 4px">
-          <span style="font-size: 16px;color:#374151;">Sub Total</span>
-          <span style="font-size: 20px">₹ 249</span>
+          <span style="font-size: 16px; color: #374151">Sub Total</span>
+          <span style="font-size: 20px; font-weight: 600">₹ 249</span>
+        </div>
+      </section>
+
+      <section style="margin-top: 16px">
+        <ul style="display: flex; flex-direction: column; gap: 8px">
+          <li>
+            <article class="cart-prod-card">
+              <!-- left part -->
+              <div style="display: flex; align-items: center; gap: 16px">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0047/9730/0847/products/nurserylive-air-purifier-money-plant_120x120.jpg?v=1634212709"
+                  alt=""
+                  class="cart-prod-img"
+                />
+
+                <div>
+                  <h6 class="cart-prod-title">
+                    Air Purifier Money Plant with pot
+                  </h6>
+                  <h5 class="cart-prod-price">Price ₹ 249</h5>
+                </div>
+              </div>
+
+              <!-- right part  -->
+              <div style="display: flex; align-items: center; gap: 16px">
+                <select class="cart-prod-items">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+
+                <h5 class="cart-prod-price">Price ₹ 249</h5>
+
+                <button class="cart-prod-remove-btn">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    width="18px"
+                    height="18px"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="cart-prod-card">
+              <!-- left part -->
+              <div style="display: flex; align-items: center; gap: 16px">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0047/9730/0847/products/nurserylive-air-purifier-money-plant_120x120.jpg?v=1634212709"
+                  alt=""
+                  class="cart-prod-img"
+                />
+
+                <div>
+                  <h6 class="cart-prod-title">
+                    Air Purifier Money Plant with pot
+                  </h6>
+                  <h5 class="cart-prod-price">Price ₹ 249</h5>
+                </div>
+              </div>
+
+              <!-- right part  -->
+              <div style="display: flex; align-items: center; gap: 16px">
+                <select class="cart-prod-items">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+
+                <h5 class="cart-prod-price">Price ₹ 249</h5>
+
+                <button class="cart-prod-remove-btn">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    width="18px"
+                    height="18px"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="cart-prod-card">
+              <!-- left part -->
+              <div style="display: flex; align-items: center; gap: 16px">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0047/9730/0847/products/nurserylive-air-purifier-money-plant_120x120.jpg?v=1634212709"
+                  alt=""
+                  class="cart-prod-img"
+                />
+
+                <div>
+                  <h6 class="cart-prod-title">
+                    Air Purifier Money Plant with pot
+                  </h6>
+                  <h5 class="cart-prod-price">Price ₹ 249</h5>
+                </div>
+              </div>
+
+              <!-- right part  -->
+              <div style="display: flex; align-items: center; gap: 16px">
+                <select class="cart-prod-items">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+
+                <h5 class="cart-prod-price">Price ₹ 249</h5>
+
+                <button class="cart-prod-remove-btn">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    width="18px"
+                    height="18px"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="cart-prod-card">
+              <!-- left part -->
+              <div style="display: flex; align-items: center; gap: 16px">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0047/9730/0847/products/nurserylive-air-purifier-money-plant_120x120.jpg?v=1634212709"
+                  alt=""
+                  class="cart-prod-img"
+                />
+
+                <div>
+                  <h6 class="cart-prod-title">
+                    Air Purifier Money Plant with pot
+                  </h6>
+                  <h5 class="cart-prod-price">Price ₹ 249</h5>
+                </div>
+              </div>
+
+              <!-- right part  -->
+              <div style="display: flex; align-items: center; gap: 16px">
+                <select class="cart-prod-items">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+
+                <h5 class="cart-prod-price">Price ₹ 249</h5>
+
+                <button class="cart-prod-remove-btn">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    width="18px"
+                    height="18px"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </article>
+          </li>
+        </ul>
+
+        <div style="float: right; margin-top: 32px; margin-bottom: 32px">
+          <button class="checkout-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              width="24px"
+              height="24px"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"
+              />
+            </svg>
+
+            <span>Checkout</span>
+          </button>
         </div>
       </section>
     </main>
