@@ -79,6 +79,12 @@ main {
   background-color: #e2e8f0;
 }
 
+.nav-links-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
 .child-center {
   display: grid;
   place-items: center;
@@ -195,4 +201,42 @@ main {
 
 .product-card-rating-container {
   display: flex;
+}
+
+@media only screen and (max-width: 1200px) {
+  .nav-links-container {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .menu-btn {
+    display: none;
+  }
+}
+
+.mobile-nav-links-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+
+.menu-btn {
+  position: relative;
+}
+
+.mobile-nav-links-container {
+  position: absolute;
+  top: 36px;
+  display: none;
+  background-color: white;
+
+}
+
+
+.menu-btn:hover .mobile-nav-links-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
