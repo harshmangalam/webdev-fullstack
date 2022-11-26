@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./cart.css" />
+    <link rel="stylesheet" href="./default.css" />
+    <link rel="stylesheet" href="./shared.css" />
     <title>Cart</title>
   </head>
   <body>
@@ -18,7 +20,41 @@
         </div>
         <div class="nav-right-container">
           <!-- nav links  -->
-          <ul style="display: flex; align-items: center; gap: 4px">
+
+          <div class="nav-icon-btn menu-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              with="24px"
+              height="24px"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+
+            <ul class="mobile-nav-links-container">
+              <li>
+                <a href="./index.html" class="nav-link">Home</a>
+              </li>
+              <li>
+                <a href="#" class="nav-link">Help</a>
+              </li>
+              <li>
+                <a href="#" class="nav-link">Orders</a>
+              </li>
+              <li>
+                <a href="#" class="nav-link">Account</a>
+              </li>
+            </ul>
+          </div>
+
+          <ul class="nav-links-container">
             <li>
               <a href="./index.html" class="nav-link">Home</a>
             </li>
@@ -91,7 +127,7 @@
 
     <main>
       <!-- toast message  -->
-      <div class="toast">
+      <!-- <div class="toast">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -108,7 +144,7 @@
         </svg>
 
         <p class="toast-text">Item removed from cart</p>
-      </div>
+      </div> -->
       <!-- cart sub total and heading heading section  -->
       <section style="display: flex; justify-content: space-between">
         <h3 style="font-size: 24px; color: #374151">Your Card</h3>
@@ -119,7 +155,7 @@
       </section>
 
       <section style="margin-top: 16px">
-        <ul style="display: flex; flex-direction: column; gap: 8px">
+        <ul class="cart-items-container">
           <li>
             <article class="cart-prod-card">
               <!-- left part -->
@@ -139,7 +175,7 @@
               </div>
 
               <!-- right part  -->
-              <div style="display: flex; align-items: center; gap: 16px">
+              <div style="display: flex; align-items: center; gap: 16px;justify-content: space-between;">
                 <select class="cart-prod-items">
                   <option value="1">1</option>
                   <option value="2">2</option>

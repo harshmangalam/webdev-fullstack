@@ -1,60 +1,93 @@
 .page-title {
-    max-width: 600px;
-    margin: auto;
+  max-width: 600px;
+  margin: auto;
 }
 
-
-
-input,select,textarea {
-    padding: 8px 16px;
-    width: 100%;
-    border-radius: 4px;
-    border: 2px solid #9ca3af;
-    margin-top: 8px;
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  padding: 8px 16px;
+  width: 100%;
+  border-radius: 4px;
+  border: 2px solid #9ca3af;
+  margin-top: 8px;
 }
 
-input:focus,textarea:focus,select {
-    border: 2px solid #3b82f6;
-    outline: none;
+input:focus,
+textarea:focus,
+select {
+  border: 2px solid #3b82f6;
+  outline: none;
 }
 
 form {
-    background-color: white;
-    max-width: 600px;
-    margin: 24px auto;
-    padding: 32px;
-    border-radius: 12px;
-
+  background-color: white;
+  max-width: 600px;
+  margin: 24px auto;
+  padding: 32px;
+  border-radius: 12px;
 }
 
 .submit-btn {
-
-    background-color: #0ea5e9;
-    padding: 12px 24px;
-    color: white;
-    font-weight: 500;
-    font-size: 16px;
-    border-radius: 8px;
-    width: 100%;
-
-
+  background-color: #0ea5e9;
+  padding: 12px 24px;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 8px;
+  width: 100%;
 }
 
 .submit-btn:hover {
-    background-color: #0284c7;
+  background-color: #0284c7;
 }
-
 
 .reset-btn {
-    background-color: #f43f5e;
-    padding: 12px 24px;
-    color: white;
-    font-weight: 500;
-    font-size: 16px;
-    border-radius: 8px;
-    width: 100%;
-
+  background-color: #f43f5e;
+  padding: 12px 24px;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 8px;
+  width: 100%;
 }
 .reset-btn:hover {
-    background-color: #e11d48;
+  background-color: #e11d48;
+}
+
+.name {
+  display: grid;
+  grid-template-columns: auto;
+  column-gap: 12px;
+  row-gap: 16px;
+}
+
+.location {
+  display: grid;
+  grid-template-columns: auto;
+  column-gap: 12px;
+  align-items: center;
+  row-gap: 16px;
+}
+
+.btn-container {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 8px;
+}
+
+@media only screen and (min-width: 800px) {
+  .name {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  .location {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  .btn-container {
+    grid-template-columns: repeat(2, auto);
+  }
 }

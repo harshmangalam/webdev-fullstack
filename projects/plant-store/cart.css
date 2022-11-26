@@ -1,11 +1,13 @@
 .cart-prod-card {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   background-color: white;
   padding: 16px;
   border: 1px solid #d1d5db;
   border-radius: 12px;
   cursor: pointer;
+  gap:8px;
 }
 
 .cart-prod-title {
@@ -70,21 +72,34 @@
   align-items: center;
   gap: 8px;
   position: fixed;
-  
+
   border-radius: 8px;
 
   bottom: 32px;
   left: 50%;
   transform: translateX(-50%);
-  
 }
 
 .toast-icon {
-    width: 24px;
-    height: 24px;
+  width: 24px;
+  height: 24px;
 }
 
 .toast-text {
-    font-weight: 500;
-    font-size: 18px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.cart-items-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+
+
+@media only screen and (min-width: 800px) {
+  .cart-prod-card {
+    flex-direction: row;
+  }
 }

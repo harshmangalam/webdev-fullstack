@@ -1,0 +1,32 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+  }
+  
+  /* default reset style  */
+  
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  body {
+    background-color: #f1f5f9;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  main {
+    max-width: 1200px;
+    margin: 100px auto auto auto;
+    padding: 0px 8px;
+  }
+  

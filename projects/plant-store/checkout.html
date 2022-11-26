@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./checkout.css" />
+    <link rel="stylesheet" href="./default.css" />
+    <link rel="stylesheet" href="./shared.css" />
     <title>Checkout</title>
   </head>
   <body>
@@ -96,13 +98,7 @@
         action="/checkout"
         method="post"
       >
-        <div
-          style="
-            display: grid;
-            grid-template-columns: auto auto;
-            column-gap: 12px;
-          "
-        >
+        <div class="name">
           <div>
             <label for="firstName">First name</label>
             <input type="text" id="firstName" />
@@ -123,14 +119,7 @@
           <textarea id="address" rows="4"></textarea>
         </div>
 
-        <div
-          style="
-            display: grid;
-            grid-template-columns: auto auto auto;
-            column-gap: 12px;
-            align-items: center;
-          "
-        >
+        <div class="location">
           <div>
             <label for="city">City</label>
             <input type="text" id="city" />
@@ -173,7 +162,7 @@
           <label for="term"> Read and check out Term & Conditions </label>
         </div>
 
-        <div style="display: flex;gap:8px;">
+        <div class="btn-container">
           <button class="submit-btn" type="submit">Checkout</button>
           <button class="reset-btn" type="reset">Reset</button>
         </div>
