@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript</title>
+
+    <style>
+      .btn {
+        padding: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- inline javascript  -->
+
+    <!-- <a href="./about.html">About Us</a> -->
+
+    <!-- inline scripting  -->
+    <button
+      id="btn"
+      class="btn"
+      style="background-color: red; color: white"
+      onclick="window.location.href='./about.html'"
+    >
+      Go to about page
+    </button>
+
+    <!-- internal scripting  -->
+    <script>
+      const button = document.getElementById("btn");
+      button.innerHTML = "<b>Updated btn</b>";
+    </script>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

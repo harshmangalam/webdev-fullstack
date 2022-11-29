@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onmouseover="showContent()">Click Me</button>
+
+    <script>
+      document.write(7 + 89);
+    </script>
+
+    <div id="div"></div>
+
+    <script>
+      document.write("Name");
+      const div = document.getElementById("div");
+
+      console.log(4 + 7, "hellow", [1, 2, 3, 45, 5]);
+      // show alert popup
+
+      alert("this is a popup alert");
+
+      function showContent() {
+        div.innerHTML = "<a href='./about.html'>Go to about </a>";
+      }
+    </script>
+  </body>
+</html>
