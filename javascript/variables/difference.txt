@@ -1,0 +1,47 @@
+var ---
+
+redeclare same varibal many times
+var x = 20
+var x = 50
+
+reassign is allowed in var
+
+var y = 40
+y = 40
+
+
+var is function scoped
+
+var is hoisted 
+
+
+
+let -----
+
+redeclre... not allowed
+let x = 30
+let x = 50
+
+let is only reassigned
+
+let x= 50
+x = 60
+
+no any hoising
+
+let is blocked scoped 
+
+
+
+
+
+
+const-------
+
+redeclare.. not allowed 
+reassign.. not allowed 
+
+const x = 40
+
+
+
