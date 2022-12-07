@@ -64,5 +64,9 @@ const id = 345
 // console.log(typeof id.toString())
 // console.log(id.toString())
 
+const str = "This is a paragram"
+
+console.log(str.search("is"))
+
 
 
