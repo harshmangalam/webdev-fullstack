@@ -45,9 +45,42 @@ users.push({
 
 // console.log(users instanceof Array)
 
-const nums = [1,2,3,45,6]
-console.log(nums.toString())
+// const nums = [1,2,3,45,6]
+// console.log(nums.toString())
 
+// users.pop()
 
+// console.log(users)
 
+// const name1 = "harsh mangalam"
 
+// const nameArr = name1.split(" ")
+
+// console.log(name1)
+// console.log(nameArr)
+
+// const nameJoined = nameArr.join("*")
+
+// console.log(nameJoined)
+
+// users.shift()
+
+users.unshift({ id: 1, name: "user 1", password: "123" });
+
+// console.log(users);
+
+const a = [ 21,, 5, 7, 3];
+const b = [6, 7, 5];
+const c = [9, 10, 11];
+
+// const d = a.concat(b,c)
+
+// console.log(d)
+
+// Array concat()
+
+// const newArr = a.splice(2,0,15,16,17);
+const newArr = a.splice(2,2);
+console.log(a)
+
+console.log(newArr)
