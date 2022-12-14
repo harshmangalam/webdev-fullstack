@@ -104,30 +104,67 @@ const c = [9, 10, 11];
 
 // console.log(filteredArr);
 
+// const users = [
+//   {
+//     name: "name 1",
+//     role: "user",
+//   },
+//   {
+//     name: "name 2",
+//     role: "admin",
+//   },
+//   {
+//     name: "name 3",
+//     role: "user",
+//   },
+// ];
+
+// const usersRole = users.filter((user) => user.role === "user");
+
+// console.log(usersRole);
+
+// const nums = [1, 2, 3, 4, 5];
+
+// const sum = nums.reduce(
+//   (previousValue, currentValue) => previousValue + currentValue,
+//   0
+// );
+
+// console.log(sum);
+
 const users = [
   {
-    name: "name 1",
-    role: "user",
+    name: "user 1",
+    isActive: false,
   },
   {
-    name: "name 2",
-    role: "admin",
+    name: "user 2",
+    isActive: true,
   },
   {
-    name: "name 3",
-    role: "user",
+    name: "user 3",
+    isActive: false,
   },
 ];
 
-const usersRole = users.filter((user) => user.role === "user");
+// const isAllActive = users.every((value) => value.isActive === true);
+// const anyActive = users.some((value) => value.isActive === true);
 
-console.log(usersRole);
+// console.log(anyActive);
 
-const nums = [1, 2, 3, 4, 5];
+const strings = ["hi", "how", "what"];
 
-const sum = nums.reduce(
-  (previousValue, currentValue) => previousValue + currentValue,
-  0
-);
+// console.log(strings.indexOf("h"));
 
-console.log(sum);
+// const findHow = strings.find((value) => value === "how");
+
+// console.log(findHow);
+
+// const user2 = users.find((value) => value.name === "user 2");
+
+// console.log(user2.name);
+// console.log(user2.isActive);
+
+// const tags = ["javascript", "webdev", "frontend", "open-source"];
+
+// console.log(tags.includes("webdev"));
