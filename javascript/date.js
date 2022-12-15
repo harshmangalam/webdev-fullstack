@@ -8,3 +8,5 @@ console.log(updatedAt.getDay());
 console.log(updatedAt.getMilliseconds());
 
 // day-month-year-hour-min-seconds-milli-timezomne
+
+const d = new Date();
