@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <input type="text" name="" id="" oninput="console.log(this)">
+
+    <div onmouseover="console.log(this)">
+    Hello</div>
+
+    <script>
+
+        // "use strict"
+      
+        // console.log(this)
+        // const address = {
+        //     lat:102.87,
+        //     lon:34.67,
+
+        //     getLocation(){
+        //         return this.getLat() + " " + this.getLon()
+        //     },
+
+        //     getLat(){
+        //         return this.lat
+        //     },
+
+        //     getLon(){
+        //         return this.lon
+        //     }
+        // }
+
+        // console.log(address.getLocation())
+
+
+        function logData(){
+            console.log(this)
+        }
+
+        logData()
+    </script>
+</body>
+</html>

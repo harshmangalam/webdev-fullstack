@@ -1,0 +1,18 @@
+{
+    "firstName":"Harsh",
+    "lastName":"Mangalam",
+    "followers":[
+        {
+            "firstName":"",
+            "lastName":""
+        },
+        {
+            "firstName":"",
+            "lastName":""
+        }
+    ],
+    "id":238,
+    "isEmailVerified":false,
+    "posts":null
+
+}
