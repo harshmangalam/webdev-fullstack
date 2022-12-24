@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <form  name="login_form" onsubmit="handleSubmit()">
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" value="test@gmail.com" />
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" value="12345" />
+      </div>
+      <button type="submit">Submit</button>
+    </form> -->
+
+    <button id="btn1">CLick</button>
+
+    <script>
+    //   function handleSubmit(e) {
+    //     e.preventDefault()
+    //     const loginForm = document.forms.login_form;
+    //     const email = loginForm.elements.email.value;
+    //     const password = loginForm.elements.password.value;
+
+    //     console.log(email, password);
+    //   }
+
+    const btn = document.getElementById("btn1")
+    btn.addEventListener("click",handleClick)
+
+ 
+
+    function handleClick(){
+        console.log("click on button")
+    }
+
+
+    </script>
+
+  
+  </body>
+</html>

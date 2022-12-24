@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    
+  </head>
+  <body>
+    <div id="box1" class="box2"></div>
+    
+    <h1>
+
+    </h1>
+
+
+
+    <div>
+        <a name="home" href="home.html">Home</a>
+        <a name="about" href="about.html">about</a>
+    </div>
+    <script>
+      const box1 = document.getElementById("box1");
+      const box2 = document.getElementsByClassName("box2");
+      box1.style.width = "150px"
+      box1.style.height = "150px"
+      box1.style.backgroundColor="red"
+
+      const h1 = document.createElement("h1")
+      h1.textContent = "hello"
+
+      document.body.appendChild(h1)
+
+      const aTags = document.anchors
+      
+       for (let a of aTags){
+        console.log(a)
+       }
+    </script>
+  </body>
+</html>
