@@ -1,0 +1,24 @@
+{
+  "name": "new-app",
+  "version": "1.0.0",
+  "description": "This is a learning project",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "keywords": [
+    "nodejs",
+    "javascript",
+    "learning",
+    "beginners"
+  ],
+  "author": "Harsh",
+  "license": "MIT",
+  "engines": {
+    "node": "v18.12.1"
+  },
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  }
+}
