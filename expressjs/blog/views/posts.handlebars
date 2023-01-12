@@ -1,0 +1,24 @@
+
+
+<h5>Total posts  {{posts.length}} </h5>
+<ul>
+    {{#each posts}}
+
+    <li>
+        <article>
+
+            <header>
+               {{this.title}}
+            </header>
+
+            <section>
+                <p>
+                {{this.description}}
+                </p>
+            </section>
+
+            
+        </article>
+    </li>
+    {{/each}}
+</ul>

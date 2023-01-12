@@ -1,4 +1,4 @@
-const posts = [];
+let posts = [];
 
 // module.exports = posts;
 
