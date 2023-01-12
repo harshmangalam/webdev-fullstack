@@ -1,5 +1,1 @@
-let posts = [];
-
-// module.exports = posts;
-
-exports.posts = posts;
+export let posts = [];

@@ -1,15 +1,16 @@
-const { Router } = require("express");
-let { posts } = require("./db");
-const router = Router();
+import { Router } from "express";
+import { posts } from "./db.js";
+
+export const postsRouter = Router();
 
 // return lists of post
-router.get("/", (req, res) => {
+postsRouter.get("/", (req, res) => {
   return res.render("posts.handlebars", { posts });
 });
 
 // get post details
 
-router.get("/:postId", (req, res) => {
+postsRouter.get("/:postId", (req, res) => {
   const postId = req.params.postId;
   const post = posts.find((post) => post.id == postId);
 
@@ -28,7 +29,7 @@ router.get("/:postId", (req, res) => {
     description:string 
 }
 */
-router.post("/", (req, res) => {
+postsRouter.post("/", (req, res) => {
   const title = req.body.title;
   const description = req.body.description;
 
@@ -65,7 +66,7 @@ router.post("/", (req, res) => {
 
 // delete post
 
-router.delete("/:postId", (req, res) => {
+postsRouter.delete("/:postId", (req, res) => {
   const postId = Number(req.params.postId);
 
   const filteredPosts = posts.filter((post) => post.id !== postId);
@@ -79,7 +80,7 @@ router.delete("/:postId", (req, res) => {
 
 // edit post
 
-router.put("/:postId", (req, res) => {
+postsRouter.put("/:postId", (req, res) => {
   const postId = Number(req.params.postId);
 
   const userUpdatedPost = req.body;
@@ -102,5 +103,3 @@ router.put("/:postId", (req, res) => {
     postId,
   });
 });
-
-module.exports = router;
