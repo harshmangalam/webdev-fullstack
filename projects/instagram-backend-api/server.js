@@ -1,7 +1,7 @@
 import express from "express";
 import morgan from "morgan";
 import authRoute from "./routes/auth.route.js";
-
+import mongoose from "mongoose";
 const app = express();
 
 // it will parse incomming request json data
@@ -14,10 +14,16 @@ app.use(morgan("dev"));
 // it will handle auth related routes
 app.use("/auth", authRoute);
 
-function main() {
-  app.listen(3000, () => {
-    console.log("Server started");
-  });
+async function main() {
+  try {
+    await mongoose.connect("mongodb://127.0.0.1:27017/instagram");
+    console.log("connected with database");
+    app.listen(3000, () => {
+      console.log("Server started");
+    });
+  } catch (error) {
+    console.log("database connection error:::", error);
+  }
 }
 
 main();
