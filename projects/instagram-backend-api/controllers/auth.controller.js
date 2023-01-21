@@ -2,8 +2,43 @@ import { Users } from "../models/user.model.js";
 import bcrypt from "bcrypt";
 import { validationResult } from "express-validator";
 
-function login(req, res) {
-  res.status(200).json({ done: true });
+async function login(req, res) {
+  // validation
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
+  const { username, password } = req.body;
+  // verify username
+
+  const user = await Users.findOne({
+    username,
+  });
+
+  if (!user) {
+    return res.status(400).json({
+      message: "Username is invalid",
+      status: "error",
+    });
+  }
+
+  // verify password
+
+  const isValidPassword = await bcrypt.compare(password, user.password);
+
+  if (!isValidPassword) {
+    return res.status(400).json({
+      message: "Password is incorrect",
+      status: "error",
+    });
+  }
+
+  // generate unique token for user
+
+  res
+    .status(200)
+    .json({ message: "Log in successfully", status: "success", user });
 }
 
 async function signup(req, res) {

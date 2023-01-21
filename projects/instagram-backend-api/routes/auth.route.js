@@ -9,7 +9,12 @@ const signupValidation = [
   body("name").isString().isLength({ min: 3, max: 30 }),
 ];
 
-router.post("/login", login);
+const loginValidation = [
+  body("username").isString().notEmpty(),
+  body("password").isString().notEmpty(),
+];
+
+router.post("/login", loginValidation, login);
 router.post("/signup", signupValidation, signup);
 
 export default router;
