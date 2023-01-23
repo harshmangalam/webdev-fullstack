@@ -1,6 +1,7 @@
 import { Users } from "../models/user.model.js";
 import bcrypt from "bcrypt";
 import { validationResult } from "express-validator";
+import jwt from "jsonwebtoken";
 
 async function login(req, res) {
   // validation
@@ -36,9 +37,16 @@ async function login(req, res) {
 
   // generate unique token for user
 
-  res
-    .status(200)
-    .json({ message: "Log in successfully", status: "success", user });
+  const token = jwt.sign({ userId: user.id }, "secret1234", {
+    expiresIn: "30m",
+  });
+
+  res.status(200).json({
+    message: "Log in successfully",
+    status: "success",
+    user,
+    token,
+  });
 }
 
 async function signup(req, res) {

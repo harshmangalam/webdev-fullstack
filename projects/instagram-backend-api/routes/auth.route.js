@@ -17,4 +17,8 @@ const loginValidation = [
 router.post("/login", loginValidation, login);
 router.post("/signup", signupValidation, signup);
 
+router.get("/test", (req, res) => {
+  false && res.status(202).json("hi");
+  return {};
+});
 export default router;
