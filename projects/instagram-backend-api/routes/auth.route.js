@@ -1,6 +1,11 @@
 import { Router } from "express";
-import { login, signup } from "../controllers/auth.controller.js";
+import {
+  login,
+  signup,
+  getCurrentUser,
+} from "../controllers/auth.controller.js";
 import { body } from "express-validator";
+import { isAuthenticated } from "../middlewares/auth.middleware.js";
 const router = Router();
 
 const signupValidation = [
@@ -16,6 +21,9 @@ const loginValidation = [
 
 router.post("/login", loginValidation, login);
 router.post("/signup", signupValidation, signup);
+
+//protected route --> only authenticated user can access this route
+router.get("/me", isAuthenticated, getCurrentUser);
 
 router.get("/test", (req, res) => {
   false && res.status(202).json("hi");

@@ -91,4 +91,11 @@ async function signup(req, res) {
   });
 }
 
-export { login, signup };
+async function getCurrentUser(req, res) {
+  const user = res.locals.user;
+  return res
+    .status(200)
+    .json({ status: "success", message: "Fetch your profile data", user });
+}
+
+export { login, signup, getCurrentUser };
