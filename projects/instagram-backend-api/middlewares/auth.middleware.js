@@ -2,13 +2,15 @@ import jwt from "jsonwebtoken";
 import { Users } from "../models/user.model.js";
 async function isAuthenticated(req, res, next) {
   // get authorization header from request
-  const authHeader = req.headers.authorization;
+  // const authHeader = req.headers.authorization;
+  // get cookies from request
 
+  // Bearer kjwdbuehfgrfygrygfr
+  let token = req.cookies.access_token;
   // get token from header "Bearer token "--> "token"
 
-  let token;
-  if (authHeader) {
-    token = authHeader.split(" ")[1];
+  if (token) {
+    token = token.split(" ")[1];
   }
   try {
     // verify the jwt token

@@ -2,11 +2,16 @@ import express from "express";
 import morgan from "morgan";
 import authRoute from "./routes/auth.route.js";
 import mongoose from "mongoose";
+
+import cookieParser from "cookie-parser";
 const app = express();
 
 // it will parse incomming request json data
 app.use(express.json());
 
+// parse incomming cookies
+
+app.use(cookieParser());
 // logging middleware
 
 app.use(morgan("dev"));
