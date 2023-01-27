@@ -25,4 +25,38 @@ async function createPost(req, res) {
   });
 }
 
-export { createPost };
+async function getPosts(req, res) {
+  const posts = await Posts.find();
+  return res.status(200).json({
+    message: "get all posts",
+    stratus: "success",
+    posts,
+  });
+}
+
+async function getPostDetails(req, res) {
+  try {
+    const { postId } = req.params;
+    console.log(postId);
+    const post = await Posts.findById(postId);
+
+    if (!post) {
+      return res.status(404).json({
+        message: "Post not found",
+        status: "error",
+      });
+    }
+    return res.status(200).json({
+      message: "get post details",
+      status: "success",
+      post,
+    });
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json({
+      message: "Internal server error",
+      status: "error",
+    });
+  }
+}
+export { createPost, getPosts, getPostDetails };
