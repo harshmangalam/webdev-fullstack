@@ -1,6 +1,6 @@
-import mongoose from "mongoose";
+import { Schema, model } from "mongoose";
 
-const postSchema = new mongoose.Schema(
+const postSchema = new Schema(
   {
     posterUrl: {
       type: String,
@@ -11,9 +11,13 @@ const postSchema = new mongoose.Schema(
       maxLength: [130, "Post description must be lesser than 130 characters"],
     },
     author: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId,
       ref: "users",
     },
   },
   { timestamps: true }
 );
+
+const Posts = model("posts", postSchema);
+
+export { Posts };

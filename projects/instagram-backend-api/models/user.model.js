@@ -1,7 +1,7 @@
-import mongoose from "mongoose";
+import { Schema, model } from "mongoose";
 
 // create user schema
-const userSchema = mongoose.Schema(
+const userSchema = Schema(
   {
     name: {
       type: String,
@@ -39,6 +39,6 @@ const userSchema = mongoose.Schema(
 );
 
 // generate user model using user schema
-const Users = mongoose.model("users", userSchema);
+const Users = model("users", userSchema);
 
 export { Users };
