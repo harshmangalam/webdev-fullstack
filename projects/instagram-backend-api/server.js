@@ -2,6 +2,7 @@ import express from "express";
 import morgan from "morgan";
 import authRoute from "./routes/auth.route.js";
 import postsRoute from "./routes/post.route.js";
+import usersRoute from "./routes/user.route.js";
 import mongoose from "mongoose";
 
 import cookieParser from "cookie-parser";
@@ -23,6 +24,9 @@ app.use("/auth", authRoute);
 // it will handle post related route
 app.use("/posts", postsRoute);
 
+// it will handle users related router /users
+
+app.use("/users", usersRoute);
 async function main() {
   try {
     await mongoose.connect("mongodb://127.0.0.1:27017/instagram");

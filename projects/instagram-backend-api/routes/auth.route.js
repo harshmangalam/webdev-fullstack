@@ -24,9 +24,4 @@ router.post("/signup", signupValidation, signup);
 
 //protected route --> only authenticated user can access this route
 router.get("/me", isAuthenticated, getCurrentUser);
-
-router.get("/test", (req, res) => {
-  false && res.status(202).json("hi");
-  return {};
-});
 export default router;
