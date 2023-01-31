@@ -2,10 +2,9 @@ import { Schema, model } from "mongoose";
 
 const postSchema = new Schema(
   {
-    posterUrl: {
+    posterId: {
       type: String,
     },
-
     description: {
       type: String,
       maxLength: [130, "Post description must be lesser than 130 characters"],
