@@ -1,0 +1,8 @@
+.navbar {
+  border-bottom: 1px solid gray;
+}
+
+.bg-red {
+  background-color: red;
+  color: white;
+}
