@@ -5,12 +5,25 @@ import { MdOutlineExplore } from "react-icons/md";
 import CustomNavLink from "./nav-link";
 export default function Sidebar() {
   return (
-    <VStack spacing="6" position="fixed">
+    <VStack
+      align="stretch"
+      spacing="6" // 6* 4 = 24px
+      position="fixed"
+      borderRightWidth={"1px"}
+      borderRightColor="gray.300"
+      top={0}
+      left={0}
+      bottom={0}
+      maxW="60"
+      width={"full"}
+    >
       <Link to="/">
-        <Heading>Instagram</Heading>
+        <Heading px="4" py="4">
+          Instagram
+        </Heading>
       </Link>
 
-      <VStack spacing="2">
+      <VStack align="stretch" spacing="2">
         {navLinks.map((link) => (
           <CustomNavLink
             key={link.label}
