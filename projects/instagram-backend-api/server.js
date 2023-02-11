@@ -4,7 +4,7 @@ import authRoute from "./routes/auth.route.js";
 import postsRoute from "./routes/post.route.js";
 import usersRoute from "./routes/user.route.js";
 import mongoose from "mongoose";
-
+import cors from "cors";
 import cookieParser from "cookie-parser";
 const app = express();
 
@@ -17,6 +17,11 @@ app.use(cookieParser());
 // logging middleware
 
 app.use(morgan("dev"));
+
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  next();
+});
 
 // it will handle auth related routes
 app.use("/auth", authRoute);
