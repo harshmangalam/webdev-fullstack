@@ -1,16 +1,12 @@
 import { VStack } from "@chakra-ui/react";
 import PostCard from "../components/post-card";
 import { useQuery } from "@tanstack/react-query";
+import { getPosts } from "../services/posts";
 export default function Home() {
   const postsQuery = useQuery({
     queryKey: ["posts"],
-    queryFn: fetchPosts,
+    queryFn: getPosts,
   });
-
-  async function fetchPosts() {
-    const res = await fetch("http://localhost:3000/posts");
-    return await res.json();
-  }
 
   if (postsQuery.isLoading) {
     return <p>Fetching posts...</p>;

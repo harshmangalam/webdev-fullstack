@@ -1,6 +1,9 @@
 import { Box } from "@chakra-ui/react";
 import { Outlet } from "react-router-dom";
 import Sidebar from "../components/sidebar";
+import axios from "axios";
+
+axios.defaults.baseURL = "http://localhost:3000";
 export default function RootLayout() {
   return (
     <Box>
