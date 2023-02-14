@@ -28,7 +28,7 @@ export default function PostCard({ post }) {
             </Box>
           </Flex>
           <IconButton
-            variant="outline"
+            variant="ghost"
             colorScheme="blue"
             aria-label="See menu"
             icon={<BsThreeDotsVertical />}

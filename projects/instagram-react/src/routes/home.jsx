@@ -1,28 +1,29 @@
 import { VStack } from "@chakra-ui/react";
-import { useEffect } from "react";
-import { useState } from "react";
 import PostCard from "../components/post-card";
-
+import { useQuery } from "@tanstack/react-query";
 export default function Home() {
-  const [posts, setPosts] = useState([]);
+  const postsQuery = useQuery({
+    queryKey: ["posts"],
+    queryFn: fetchPosts,
+  });
 
   async function fetchPosts() {
-    try {
-      const res = await fetch("http://localhost:3000/posts");
-      const json = await res.json();
-
-      setPosts(json.posts);
-    } catch (error) {
-      console.log(error);
-    }
+    const res = await fetch("http://localhost:3000/posts");
+    return await res.json();
   }
 
-  useEffect(() => {
-    fetchPosts();
-  }, []);
+  if (postsQuery.isLoading) {
+    return <p>Fetching posts...</p>;
+  }
+
+  if (postsQuery.isError) {
+    console.log(postsQuery.error);
+    return <p>There is some problem in fetching posts.</p>;
+  }
+
   return (
     <VStack spacing="4">
-      {posts.map((post) => (
+      {postsQuery.data?.posts.map((post) => (
         <PostCard key={post._id} post={post} />
       ))}
     </VStack>

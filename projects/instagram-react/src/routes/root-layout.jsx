@@ -5,7 +5,7 @@ export default function RootLayout() {
   return (
     <Box>
       <Sidebar />
-      <Box as="main" ml="60" px="4">
+      <Box as="main" ml="60" px="4" py="8">
         <Outlet />
       </Box>
     </Box>
