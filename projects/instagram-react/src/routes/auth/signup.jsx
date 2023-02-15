@@ -8,6 +8,9 @@ import {
   Card,
   CardBody,
   Flex,
+  Alert,
+  FormErrorMessage,
+  AlertIcon,
 } from "@chakra-ui/react";
 import { useMutation } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
@@ -37,24 +40,52 @@ export default function Signup() {
       console.log(error);
     }
   }
+
+  const nameError =
+    signupMutation.isError &&
+    signupMutation?.error?.response?.data?.errors?.name?.msg;
+
+  const usernameError =
+    signupMutation.isError &&
+    signupMutation?.error?.response?.data?.errors?.username?.msg;
+
+  const passwordError =
+    signupMutation.isError &&
+    signupMutation?.error.response?.data?.errors?.password?.msg;
+
+  const alertMessage = signupMutation?.error?.response?.data?.message;
+
   return (
     <Box>
       <Card maxW="sm" mx="auto">
         <CardBody>
-          <VStack spacing="4" as="form" onSubmit={handleSignup}>
-            <FormControl>
+          {alertMessage && (
+            <Alert status="error">
+              <AlertIcon />
+              {alertMessage}
+            </Alert>
+          )}
+          <VStack spacing="4" as="form" onSubmit={handleSignup} mt="4">
+            <FormControl isInvalid={!!nameError}>
               <FormLabel>Name</FormLabel>
               <Input type="text" name="name" />
+              {nameError && <FormErrorMessage>{nameError}</FormErrorMessage>}
             </FormControl>
 
-            <FormControl>
+            <FormControl isInvalid={!!usernameError}>
               <FormLabel>Username</FormLabel>
               <Input type="text" name="username" />
+              {usernameError && (
+                <FormErrorMessage>{usernameError}</FormErrorMessage>
+              )}
             </FormControl>
 
-            <FormControl>
+            <FormControl isInvalid={!!passwordError}>
               <FormLabel>Password</FormLabel>
               <Input type="password" name="password" />
+              {passwordError && (
+                <FormErrorMessage>{passwordError}</FormErrorMessage>
+              )}
             </FormControl>
 
             <Button type="submit" w="full" colorScheme="blue">

@@ -8,6 +8,9 @@ import {
   Card,
   CardBody,
   Flex,
+  FormErrorMessage,
+  Alert,
+  AlertIcon,
 } from "@chakra-ui/react";
 import { useMutation } from "@tanstack/react-query";
 import { useState } from "react";
@@ -37,27 +40,51 @@ export default function Login() {
       console.log(error);
     }
   }
+
+  const usernameError =
+    loginMutation.isError &&
+    loginMutation?.error?.response?.data?.errors?.username?.msg;
+
+  const passwordError =
+    loginMutation.isError &&
+    loginMutation?.error.response?.data?.errors?.password?.msg;
+
+  const alertMessage = loginMutation?.error?.response?.data?.message;
+
   return (
     <Box>
       <Card maxW="sm" mx="auto">
         <CardBody>
-          <VStack spacing="4" as="form" onSubmit={handleLogin}>
-            <FormControl>
+          {alertMessage && (
+            <Alert status="error">
+              <AlertIcon />
+              {alertMessage}
+            </Alert>
+          )}
+
+          <VStack spacing="4" as="form" onSubmit={handleLogin} mt="4">
+            <FormControl isInvalid={!!usernameError}>
               <FormLabel>Username</FormLabel>
               <Input
                 type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
               />
+              {usernameError && (
+                <FormErrorMessage>{usernameError}</FormErrorMessage>
+              )}
             </FormControl>
 
-            <FormControl>
+            <FormControl isInvalid={!!passwordError}>
               <FormLabel>Password</FormLabel>
               <Input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
+              {passwordError && (
+                <FormErrorMessage>{passwordError}</FormErrorMessage>
+              )}
             </FormControl>
 
             <Button type="submit" w="full" colorScheme="blue">
