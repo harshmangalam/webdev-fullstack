@@ -7,7 +7,7 @@ async function login(req, res) {
   // validation
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() });
+    return res.status(400).json({ errors: errors.mapped() });
   }
 
   const { username, password } = req.body;
@@ -57,7 +57,7 @@ async function signup(req, res) {
   // validation
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() });
+    return res.status(400).json({ errors: errors.mapped() });
   }
   const userData = req.body;
 
