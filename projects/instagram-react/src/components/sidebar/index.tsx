@@ -3,7 +3,34 @@ import { Link } from "react-router-dom";
 import { BiHomeAlt } from "react-icons/bi";
 import { MdOutlineExplore } from "react-icons/md";
 import CustomNavLink from "./nav-link";
+import { useAuthContext } from "../../context/auth";
+import { AiOutlineLogin } from "react-icons/ai";
+import { SiGnuprivacyguard } from "react-icons/si";
 export default function Sidebar() {
+  const { state } = useAuthContext();
+
+  const navLinks = [
+    {
+      href: "/",
+      icon: <BiHomeAlt size={24} />,
+      label: "Home",
+    },
+    {
+      href: "/explore",
+      icon: <MdOutlineExplore size={24} />,
+      label: "Explore",
+    },
+    {
+      href: "/harshmangalam",
+      icon: (
+        <Avatar
+          src="https://avatars.githubusercontent.com/u/57381638?v=4"
+          size="sm"
+        />
+      ),
+      label: state.user?.username,
+    },
+  ];
   return (
     <VStack
       align="stretch"
@@ -24,38 +51,37 @@ export default function Sidebar() {
       </Link>
 
       <VStack align="stretch" spacing="2">
-        {navLinks.map((link) => (
-          <CustomNavLink
-            key={link.label}
-            icon={link.icon}
-            label={link.label}
-            href={link.href}
-          />
-        ))}
+        {state.isAuthenticated
+          ? navLinks.map((link) => (
+              <CustomNavLink
+                key={link.label}
+                icon={link.icon}
+                label={link.label}
+                href={link.href}
+              />
+            ))
+          : authLinks.map((link) => (
+              <CustomNavLink
+                key={link.label}
+                icon={link.icon}
+                label={link.label}
+                href={link.href}
+              />
+            ))}
       </VStack>
     </VStack>
   );
 }
 
-const navLinks = [
+const authLinks = [
   {
-    href: "/",
-    icon: <BiHomeAlt size={24} />,
-    label: "Home",
+    href: "/login",
+    icon: <AiOutlineLogin size={24} />,
+    label: "Login",
   },
   {
-    href: "/explore",
-    icon: <MdOutlineExplore size={24} />,
-    label: "Explore",
-  },
-  {
-    href: "/harshmangalam",
-    icon: (
-      <Avatar
-        src="https://avatars.githubusercontent.com/u/57381638?v=4"
-        size="sm"
-      />
-    ),
-    label: "Profile",
+    href: "/signup",
+    icon: <SiGnuprivacyguard size={24} />,
+    label: "Signup",
   },
 ];

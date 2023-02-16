@@ -17,7 +17,10 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { loginUser } from "../../services/auth";
+import Cookies from "js-cookie";
+import { useAuthContext } from "../../context/auth";
 export default function Login() {
+  const { handleAuthenticate } = useAuthContext();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -34,7 +37,13 @@ export default function Login() {
         password,
       });
 
-      console.log(data);
+      const token = data.token;
+      const user = data.user;
+
+      Cookies.set("accesToken", token);
+
+      handleAuthenticate(user);
+
       navigate("/");
     } catch (error) {
       console.log(error);
