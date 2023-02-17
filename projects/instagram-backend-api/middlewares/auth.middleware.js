@@ -6,7 +6,7 @@ async function isAuthenticated(req, res, next) {
   // get cookies from request
 
   // Bearer kjwdbuehfgrfygrygfr
-  let token = req.cookies.access_token;
+  let token = req.cookies.accesToken;
   // get token from header "Bearer token "--> "token"
 
   if (token) {

@@ -18,8 +18,10 @@ async function getAllUsers(req, res) {
 async function getUserDetail(req, res) {
   try {
     // first we  will take userid from params
-    const userId = req.params.userId;
-    const user = await Users.findById(userId).exec();
+    const username = req.params.username;
+    const user = await Users.findOne({
+      username,
+    }).exec();
 
     if (!user) {
       return res

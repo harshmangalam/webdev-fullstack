@@ -45,6 +45,9 @@ async function login(req, res) {
   // save token in client cookie
   res.cookie("access_token", token, { maxAge: 30 * 60 * 1000, httpOnly: true });
 
+  user.isActive = true;
+  await user.save();
+
   res.status(200).json({
     message: "Log in successfully",
     status: "success",
