@@ -10,4 +10,9 @@ async function loginUser(data) {
   return res.data;
 }
 
-export { signupUser, loginUser };
+async function getCurrentUser() {
+  const res = await axios.get("/auth/me");
+  return res.data;
+}
+
+export { signupUser, loginUser, getCurrentUser };
