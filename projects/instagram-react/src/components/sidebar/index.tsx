@@ -21,14 +21,9 @@ export default function Sidebar() {
       label: "Explore",
     },
     {
-      href: "/harshmangalam",
-      icon: (
-        <Avatar
-          src="https://avatars.githubusercontent.com/u/57381638?v=4"
-          size="sm"
-        />
-      ),
-      label: state.user?.username,
+      href: `/${state.user?.username}`,
+      icon: <Avatar name={state.user?.name} size="sm" />,
+      label: state.user?.name,
     },
   ];
   return (

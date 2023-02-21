@@ -12,19 +12,25 @@ import {
   Button,
   Heading,
 } from "@chakra-ui/react";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+
 import { BiChat, BiLike, BiShare } from "react-icons/bi";
 import { BsThreeDotsVertical } from "react-icons/bs";
+
+dayjs.extend(relativeTime);
+
 export default function PostCard({ post }) {
   return (
     <Card maxW="md">
       <CardHeader>
         <Flex spacing="4">
           <Flex flex="1" gap="4" alignItems="center" flexWrap="wrap">
-            <Avatar size="sm" name="Kola Tioluwani" src={post.posterUrl} />
+            <Avatar size="sm" name={post.author.name} />
 
             <Box>
-              <Heading size="sm">{post.author}</Heading>
-              <Text>{post.createdAt}</Text>
+              <Heading size="sm">{post.author.name}</Heading>
+              <Text>{dayjs(post.createdAt).fromNow()}</Text>
             </Box>
           </Flex>
           <IconButton
