@@ -27,7 +27,7 @@ async function createPost(req, res) {
 }
 
 async function getPosts(req, res) {
-  const posts = await Posts.find();
+  const posts = await Posts.find().populate("author", "_id name").exec();
   return res.status(200).json({
     message: "get all posts",
     stratus: "success",

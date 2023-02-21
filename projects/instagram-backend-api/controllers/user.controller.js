@@ -83,10 +83,12 @@ async function updateUser(req, res) {
       $set: { ...user },
     });
 
+    const updatedData = await Users.findById(userId).exec();
+
     return res.status(201).json({
       status: "success",
       message: "profile updated successfully",
-      user: updatedUser,
+      user: updatedData,
     });
   } catch (error) {
     return res.status(500).json({
